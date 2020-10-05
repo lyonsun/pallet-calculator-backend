@@ -1,6 +1,7 @@
 from rest_framework import serializers
 from .models import Record
 from pallets.models import Pallet
+from pallets.serializers import PalletSerializer
 
 class RecordSerializer(serializers.ModelSerializer):
     class Meta:
@@ -16,3 +17,7 @@ class RecordSerializer(serializers.ModelSerializer):
             'due_date',
             'pallet'
         ]
+
+    def to_representation(self, instance):
+        self.fields['pallet'] = PalletSerializer(read_only=True)
+        return super(RecordSerializer, self).to_representation(instance)
