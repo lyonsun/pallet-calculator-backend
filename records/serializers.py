@@ -7,6 +7,7 @@ class RecordSerializer(serializers.ModelSerializer):
     class Meta:
         model = Record
         fields = [
+            'id',
             'username',
             'box_number',
             'article_name',
