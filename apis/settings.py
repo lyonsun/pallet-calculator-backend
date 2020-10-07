@@ -26,7 +26,12 @@ SECRET_KEY = '@cf%fv#s0$h#y_ed&e%z#d-=ssix-cx@fr4%=*%^f$aj1mem9y'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = [
+    '0.0.0.0',
+    'localhost',
+    '127.0.0.1',
+    'nooga-exercise-backend.herokuapp.com'
+]
 
 
 # Application definition
