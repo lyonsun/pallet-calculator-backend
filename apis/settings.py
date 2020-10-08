@@ -150,6 +150,6 @@ if ENVIRONMENT == 'production':
     DEBUG = False
     SECRET_KEY = os.getenv('SECRET_KEY')
 
-    # CORS_ALLOWED_ORIGINS = [
-    #     os.getenv('FRONTEND_URI'),
-    # ]
+    CORS_ALLOWED_ORIGINS = [
+        os.getenv('FRONTEND_URI', 'http://localhost:3000'),
+    ]
