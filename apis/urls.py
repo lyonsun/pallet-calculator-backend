@@ -15,9 +15,15 @@ Including another URLconf
 """
 # from django.contrib import admin
 from django.urls import path, include
+from rest_framework import routers
+
+from pallets import views as palletsViews
+from records import views as recordViews
+
+router = routers.DefaultRouter()
+router.register(r'pallets', palletsViews.PalletViewSet)
+router.register(r'records', recordViews.RecordViewSet)
 
 urlpatterns = [
-    # path('admin/', admin.site.urls),
-    path('api/', include('pallets.urls')),
-    path('api/', include('records.urls'))
+    path('api/', include(router.urls))
 ]
